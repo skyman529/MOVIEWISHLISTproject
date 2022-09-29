@@ -2,12 +2,12 @@
 var submitbtnEl = $("#searchbtn")
 // the logic of the fucntion that i will want to occur
 // add event listener to connect the function so it happens
-submitbtnEl.click(getWeatherdata)
+submitbtnEl.click(getmoviedata)
 // query's citys weather pulls data
-  function getWeatherdata() {
+  function getmoviedata() {
     var inputEl = $("#input")
-    var city= inputEl.val()
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=e5a600330dcc1a04f3349222a9a1a298`)
+    var title= inputEl.val()
+    fetch(`https://www.omdbapi.com/?t=${title}&apikey=a8088794`)
   .then(response => response.json())
   .then(response => 
     {
