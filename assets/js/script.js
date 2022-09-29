@@ -19,10 +19,16 @@ submitbtnEl.click(getWeatherdata)
     
   }
  
+//Using Materialize for navbar dropdown
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
+  });
 
-  function createCard(card)
-  {
-    var cardEl = $("<div>") 
-    cardEl.appendTo(card)
-  }
-createCard(submitbtnEl)
+  $( function() {
+    $( "#wish-list" ).sortable({
+      placeholder: "ui-state-highlight"
+    });
+    $( "#wish-list" ).disableSelection();
+  } );
+  
