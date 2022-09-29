@@ -1,7 +1,6 @@
 // step one grab relavent html element
 // var submitbtnEl = $("#search-movie")
 var submitbtnEl = document.querySelector('#search-movie');
-var searchInputEl = document.querySelector('.search');
 var movieTitleEL = document.querySelector('#Title');
 var movieReleasedEL = document.querySelector('#Released');
 var moviePosterEL = document.querySelector('#Poster');
@@ -15,7 +14,7 @@ submitbtnEl.addEventListener('click', getmoviedata);
   function getmoviedata(event) {
     event.preventDefault();
    
-    var searchInputEl = $("#search")
+    var searchInputEl = $("#search-movie-input")
     var title = searchInputEl.val()
     console.log(title);
     fetch(`https://www.omdbapi.com/?t=${title}&apikey=a8088794`)
