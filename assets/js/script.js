@@ -18,17 +18,9 @@ submitbtnEl.click(getWeatherdata)
   .catch(err => console.error(err));
     
   }
- 
-//Using Materialize for navbar dropdown
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
-  });
-
-  $( function() {
-    $( "#wish-list" ).sortable({
-      placeholder: "ui-state-highlight"
-    });
-    $( "#wish-list" ).disableSelection();
-  } );
   
+// jQuery for navbar
+
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
