@@ -3,116 +3,112 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Movie App</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Movie App</title>
 </head>
 
 <body class="grey lighten-3">
+  <nav>
+    <div class="nav-wrapper deep-purple darken-2">
+      <a href="#!" class="brand-logo teal-text text-lighten-5"><i
+          class="black-text material-icons">movie_filter</i>Movie Wishlist</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="teal-text text-lighten-5" href="">Search Movies</a></li>
+        <li><a class="teal-text text-lighten-5" href="">My WishList</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  
+
+  <ul class="right sidenav teal lighten-5" id="mobile-demo">
+    <li><a class="deep-purple-text text-darken-2" href="">Search Movies</a></li>
+    <li><a class="deep-purple-text text-darken-2" href="">My WishList</a></li>
+  </ul>
+
+  <div class="section container">
+    <h4 class="black-text">Search for a Movie</h4>
     <nav>
-        <div class="nav-wrapper deep-purple darken-2">
-            <a href="#!" class="brand-logo teal-text text-lighten-5"><i
-                    class="black-text material-icons">movie_filter</i>Movie Wishlist</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a class="teal-text text-lighten-5" href="">Search Movies</a></li>
-                <li><a class="teal-text text-lighten-5" href="">My WishList</a></li>
-            </ul>
-        </div>
-    </nav>
-
-
-
-    <ul class="right sidenav teal lighten-5" id="mobile-demo">
-        <li><a class="deep-purple-text text-darken-2" href="">Search Movies</a></li>
-        <li><a class="deep-purple-text text-darken-2" href="">My WishList</a></li>
-    </ul>
-
-    <div class="section container">
-      <div class="row">
-       
-      </div>
-      <div class="row">
-        <div class="col l5 m12 s12">
-        <h4 class="black-text">Search for a Movie</h4>
-            <div id="search-movie-bar" class="nav-wrapper teal lighten-5">
-                <form>
-                    <div class="input-field">
-                        <input id="search-movie-input" type="search" required>
-                        <label class="label-icon" for="search"><i
-                                class="material-icons deep-purple-text text-darken-2">search</i></label>
-                        <i class="material-icons">close</i>
-                        <button id="search-movie" class="waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable">Search</button>
-                    </div>
-                </form>
-            </div>
-      </div>
-        <div class="col l2 m0 s0"></div>
-        <div class="col l5 m12 s12">
-        <h4 class="black-text">Is it Movie Weather?</h4>
-          <div id="search-weather-bar" class="nav-wrapper teal lighten-5">
-              <form>
-                  <div class="input-field">
-                      <input id="search-weather-input" type="search" required>
-                      <label class="label-icon" for="search"><i
-                              class="material-icons deep-purple-text text-darken-2">search</i></label>
-                      <i class="material-icons">close</i>
-                      <button class="waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable">Search</button>
-                  </div>
-                 
-              </form>
+      <div id="search-bar" class="nav-wrapper teal lighten-5">
+        <form>
+          <div class="input-field">
+            <input id="search" type="search" required>
+            <label class="label-icon" for="search"><i
+                class="material-icons deep-purple-text text-darken-2">search</i></label>
+            <i class="material-icons">close</i>
           </div>
-    </div>
-    </div>
-    </div>
-
-
-
-    <div class="divider"></div>
-    <div class="section container">
-        <div id="results" class="col s12 m7">
-            <div class="card horizontal small">
-                <div class="card-image">
-                    <img src="./assets/sample-image/IMG_1574.jpeg">
-                </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <h4 class="header black-text">Movie Title</h4>
-                        <ul>
-                            <li class="deep-purple-text text-darken-2">Movie info</li>
-                            <li class="deep-purple-text text-darken-2">Movie info</li>
-                            <li class="deep-purple-text text-darken-2">Movie info</li>
-                            <li class="deep-purple-text text-darken-2">Movie info</li>
-                        </ul>
-                    </div>
-                    <div class="card-action right-align">
-                        <button class="waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable"><i
-                                class="deep-purple-text text-darken-2 material-icons left">add</i>add to wishlist</button>
-                    </div>
-                </div>
-            </div>
+          
+        </form>
+      </div>
+    </nav>
+  </div>
+  <div class="divider"></div>
+  <div class="section container">
+    <div id="results" class="col s12 m7">
+      <div class="card horizontal small">
+        <div class="card-image">
+          <img src="./assets/sample-image/IMG_1574.jpeg">
         </div>
+      </nav>
+
+      <div id "content" class="container">
+        <div class="row">
+            <!--search box -->
+
+            <div id="page-1" class="col-s6 left">
+                <form>
+                    <label for="Search Bar">Search for a Movie</label>
+                    <button id="search-movie">Search</button>
+                </form>
+                
+            </div>
+            <div class="col-s6 right">
+              <form>
+                  <label for="Search Bar">Is it movie watching weather?</label>
+                  <button id="search-weather">Check</button>
+                </form> 
+            </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <h4 class="header black-text" id="Title">Movie Title</h4>
+            <ul>
+          
+              <li class="deep-purple-text text-darken-2" id="Released">Movie info</li>
+              <li class="deep-purple-text text-darken-2" id="Poster">Movie info</li>
+    
+            </ul>
+            <p id = "Plot"></p>
+          </div>
+          <div class="card-action right-align">
+            <a class="waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable"><i
+                class="deep-purple-text text-darken-2 material-icons left">add</i>add to wishlist</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
 
 
-    <!-- second page - wishlist -->
-    <div class="container">
-        <ul id="wish-list" class="">
-            <h4 class="black-text">My WishList</h4>
-            <li class="ui-state-default teal lighten-5 deep-purple-text text-darken-2">
-                <img class="wish-image" src="./assets/sample-image/IMG_1574.jpeg">
-                <h4 class="wish-title">Movie Title</h4>
-            </li>
-        </ul>
-    </div>
+  <!-- second page - wishlist -->
+  <div class="container">
+    <ul id="wish-list" class="">
+      <h4 class="black-text">My WishList</h4>
+      <li class="ui-state-default teal lighten-5 deep-purple-text text-darken-2" >
+        <img class="wish-image"src="./assets/sample-image/IMG_1574.jpeg">
+        <h4 class="wish-title">Movie Title</h4>
+      </li>
+    </ul>
+  </div>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
