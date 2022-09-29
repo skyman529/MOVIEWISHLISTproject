@@ -1,62 +1,23 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Movie App</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" >
+    <title>Movie App</title>
 </head>
 
-<body class="grey lighten-3">
-  <nav>
-    <div class="nav-wrapper deep-purple darken-2">
-      <a href="#!" class="brand-logo teal-text text-lighten-5"><i
-          class="black-text material-icons">movie_filter</i>Movie Wishlist</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a class="teal-text text-lighten-5" href="">Search Movies</a></li>
-        <li><a class="teal-text text-lighten-5" href="">My WishList</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  
-
-  <ul class="right sidenav teal lighten-5" id="mobile-demo">
-    <li><a class="deep-purple-text text-darken-2" href="">Search Movies</a></li>
-    <li><a class="deep-purple-text text-darken-2" href="">My WishList</a></li>
-  </ul>
-
-  <div class="section container">
-    <h4 class="black-text">Search for a Movie</h4>
+<body>
+    
     <nav>
-      <div id="search-bar" class="nav-wrapper teal lighten-5">
-        <form>
-          <div class="input-field">
-            <input id="search" type="search" required>
-            <label class="label-icon" for="search"><i
-                class="material-icons deep-purple-text text-darken-2">search</i></label>
-            <i class="material-icons">close</i>
-          </div>
-
-        </form>
-      </div>
-    </nav>
-  </div>
-  <div class="divider"></div>
-  <div class="section container">
-    <div id="results" class="col s12 m7">
-      <div class="card horizontal small">
-        <div class="card-image">
-          <img src="./assets/sample-image/IMG_1574.jpeg">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Movie WishList</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="">Search</a></li>
+            <li><a href="">My WishList</a></li>
+          </ul>
         </div>
       </nav>
 
@@ -77,43 +38,25 @@
                   <button id="search-weather">Check</button>
                 </form> 
             </div>
-        <div class="card-stacked">
-          <div class="card-content">
-            <h4 class="header black-text">Movie Title</h4>
-            <ul>
-              <li class="deep-purple-text text-darken-2">Movie info</li>
-              <li class="deep-purple-text text-darken-2">Movie info</li>
-              <li class="deep-purple-text text-darken-2">Movie info</li>
-              <li class="deep-purple-text text-darken-2">Movie info</li>
-            </ul>
-          </div>
-          <div class="card-action right-align">
-            <a class="waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable"><i
-                class="deep-purple-text text-darken-2 material-icons left">add</i>add to wishlist</a>
-          </div>
         </div>
-      </div>
+       
     </div>
-  </div>
 
+<!-- second page - wishlist -->
 
+ <div id="movie-content" class="col-10"></div>
+            <div class="results">
+            <!-- is this where the js goes? -->
+            </div>
+        <ul>
+            <!-- movie search results go here? Create list? Delete if unnessasary-->
+        </ul> 
 
-  <!-- second page - wishlist -->
-  <div class="container">
-    <ul id="wish-list" class="">
-      <h4 class="black-text">My WishList</h4>
-      <li class="ui-state-default teal lighten-5 deep-purple-text text-darken-2" >
-        <img class="wish-image"src="./assets/sample-image/IMG_1574.jpeg">
-        <h4 class="wish-title">Movie Title</h4>
-      </li>
-    </ul>
-  </div>
-
+    </div>
+  <!-- jQuery -->
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script src="./assets/data.js"></script>
-<script src="./assets/js/script.js"></script>
-
+<script src="./assets/script.js"></script>
 </html>
