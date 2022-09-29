@@ -6,6 +6,7 @@ html>body #wish-list li { height: 3.5em; line-height: 3.2em; } */
   
 .ui-state-highlight { height: 162px; background-color: #512da8; }
 
+
 li{
     display: flex;
 }
