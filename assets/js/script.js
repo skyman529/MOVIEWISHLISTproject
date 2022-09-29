@@ -18,11 +18,9 @@ submitbtnEl.click(getWeatherdata)
   .catch(err => console.error(err));
     
   }
- 
+  
+// jQuery for navbar
 
-  function createCard(card)
-  {
-    var cardEl = $("<div>") 
-    cardEl.appendTo(card)
-  }
-createCard(submitbtnEl)
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
