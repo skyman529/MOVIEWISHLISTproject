@@ -26,7 +26,7 @@ var moviesObj = []; // populated from localStorage on page init
     results.setAttribute("style", "display");
     var searchInputEl = $("#search-movie-input")
     var title = searchInputEl.val()
-    movieTitle = title;
+    
     fetch(`https://www.omdbapi.com/?t=${title}&apikey=a8088794`)
   .then(response => response.json())
   .then(response => 
@@ -42,7 +42,7 @@ var moviesObj = []; // populated from localStorage on page init
         movieReleasedEL.textContent = Released;
         moviePosterEL.src = Poster;
         moviePlotEL.textContent = Plot;
-       
+        movieTitle = Title;
     }
   )
   .catch(err => console.error(err));
@@ -54,16 +54,18 @@ var moviesObj = []; // populated from localStorage on page init
     searchMovie.setAttribute("style", "display");
     results.setAttribute("style", "display:none");
     wishlist.setAttribute("style", "display:none");
+    wishlistContainer.setAttribute("style", "display:none");
   }
 
   function wishListPage(event) {
-    console.log("wishlistPage function called");
+  
     event.preventDefault();
-   
+    renderWishlist(); //builds wishlist elements on screen
     searchMovie.setAttribute("style", "display:none");
     results.setAttribute("style", "display:none");
     wishlist.setAttribute("style", "display");
-    renderWishlist();
+    wishlistContainer.setAttribute("style", "display");
+    
   }
 
 // jQuery for navbar
@@ -88,21 +90,33 @@ function init() {
 // Renders Wishlist Items from localStorage and displays in Wishlist Card
 function renderWishlist() {
  
-  // Clear todoList element and update todoCountSpan
+  // Clear wishlist html element
   wishlist.innerHTML = "";
   
   // Render a new li for each wishlist
   for (var i = 0; i < moviesObj.length; i++) {
     var movie = moviesObj[i];
-    var li = document.createElement("li");
-    li.textContent = movie;
+    var li = document.createElement("li");    
+    
     li.setAttribute("data-index", i);
-    li.setAttribute("class", "collection-item");
+    li.setAttribute("class", "collection-item valign-wrapper");
+
+    
+
     var button = document.createElement("button");
-    button.textContent = "Remove";
-    button.setAttribute("class", "waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable");
+    button.textContent = "-";
+    button.setAttribute("class", "right waves-effect waves-circle waves-light btn-floating secondary-content red lighten-2 deep-purple-text text-darken-2 hoverable");
+    button.setAttribute("style", "margin-right: 20px;");
     li.appendChild(button);
     wishlist.appendChild(li);
+
+
+    var h4 = document.createElement("h4");
+    h4.textContent = movie;
+    li.appendChild(h4);
+    h4.setAttribute("class", "left Title header black-text left");
+
+
   }
   
 }
@@ -112,9 +126,10 @@ function storeWishlist() {
   moviesObj.push(movieTitle); // adds movie to local object
   localStorage.setItem("Wishlist", JSON.stringify(moviesObj)); //replaces localStorage wishlist values with our moviesObj
   
-  // displays wishlist after adding a movie
-  renderWishlist();
-  wishlist.setAttribute("style", "display");
+    // displays wishlist after adding a movie
+    renderWishlist();
+    wishlist.setAttribute("style", "display");
+    wishlistContainer.setAttribute("style", "display");
 }
 
 // Removes Movie from Wishlist
