@@ -67,6 +67,10 @@ wishListBtn.addEventListener('click', wishListPage)
 $(document).ready(function(){
   $('.sidenav').sidenav();
 });
+// jQuery for carousel
 
+$(document).ready(function(){
+  $('.carousel').carousel();
+});
 
 
