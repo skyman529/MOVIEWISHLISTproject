@@ -78,16 +78,12 @@
       </div>
     </div>
   </div>
-
-
-
-  <!-- second page - Wishlist Page -->
+  <!-- second page - Wishlist Page (Faith's UI)
 
   <div class="section container">
-    <div id="wishlist" class="col s12 m7" style="display:flex">
+    <div id="wishlist" class="col s12 m7" style="display:none">
       <h4 class="black-text">My WishList</h4>
-      <!-- This is where the Card will Go -->
-
+     
       <div class="card horizontal small">
         <div class="card-image">
           <img class="Poster" src="./assets/sample-image/IMG_1574.jpeg">
@@ -95,7 +91,7 @@
         <div class="card-stacked">
           <div class="card-content">
             <h4 class="Title header black-text">Movie Title</h4>
-            <ul id="wishlist">
+            <ul>
               <li class="Released deep-purple-text text-darken-2">Movie info</li>
               <li class="deep-purple-text text-darken-2">Movie info</li>
             </ul>
@@ -105,6 +101,24 @@
             <button id="remove-button" class="waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable"><i
                 class="deep-purple-text text-darken-2 material-icons left">remove</i>remove from wishlist</button>
           </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- second page - Wishlist Page (Jeremy's UI) -->
+
+  <div class="section container">
+    <div class="col s12 m7">
+      <h4 class="black-text">My WishList</h4>
+      <!-- This is where the wishlist items will be displayed -->
+
+        <ul id="wishlist" class="collection" style="display:none">
+          <li class="Released deep-purple-text text-darken-2"><div>Movie Title <a class="btn-floating btn-smal waves-effect waves-light red"><i class="material-icons">remove</i></a></div></li>
+          <li class="deep-purple-text text-darken-2"><div>Movie Title info <button id="remove-button" class="waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable right-align"><i
+            class="deep-purple-text text-darken-2 material-icons left">remove</i>remove</button></div></li>
+        </ul>
         </div>
       </div>
     </div>
