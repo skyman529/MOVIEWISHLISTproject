@@ -14,16 +14,17 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Movie App</title>
 </head>
+
 <body>
   <!-- Navbar -->
   <nav>
     <div class="nav-wrapper deep-purple darken-2">
       <a href="#!" class="brand-logo teal-text text-lighten-5"><i
-          class="black-text material-icons">movie_filter</i>Movie Wishlist</a>
+          class="black-text material-icons">movie_filter</i>The Watchlist</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="search-bar-button teal-text text-lighten-5" href="">Search Movies</a></li>
-        <li><a class="wishlist-button teal-text text-lighten-5" href="">My WishList</a></li>
+        <li><a class="wishlist-button teal-text text-lighten-5" href="">My Watchlist</a></li>
       </ul>
     </div>
   </nav>
@@ -31,7 +32,7 @@
 
   <ul class="right sidenav teal lighten-5" id="mobile-demo">
     <li><a class="search-bar-button deep-purple-text text-darken-2" href="">Search Movies</a></li>
-    <li><a class="wishlist-button deep-purple-text text-darken-2" href="">My WishList</a></li>
+    <li><a class="wishlist-button deep-purple-text text-darken-2" href="">My Watchlist</a></li>
   </ul>
 
   <!-- Search Bar -->
@@ -40,7 +41,7 @@
     <div class="nav-wrapper">
       <form>
         <div class="input-field">
-          <input id="search-movie-input" class= "deep-purple darken-2 teal-text text-lighten-5" type="search" required>
+          <input id="search-movie-input" class="deep-purple darken-2 teal-text text-lighten-5" type="search" required>
           <label class="label-icon" for="search"><i
               class="search-icon material-icons teal-text text-lighten-5">search</i></label>
           <button id="search-movie"
@@ -51,19 +52,11 @@
   </div>
 
   <div class="divider"></div>
-  <h4 class="black-text center">Search Upcoming Movies</h4>
-        <!-- carousel for upcoming movies to show -->
-        <div class="carousel">
-          <a class="carousel-item" href="#one!"><img src="https://source.unsplash.com/686x1016/?movie,poster"></a>
-          <a class="carousel-item" href="#two!"><img src="https://source.unsplash.com/686x1016/?movie,poster"></a>
-          <a class="carousel-item" href="#three!"><img src="https://source.unsplash.com/686x1016/?movie,poster"></a>
-          <a class="carousel-item" href="#four!"><img src="https://source.unsplash.com/686x1016/?movie,poster"></a>
-          <a class="carousel-item" href="#five!"><img src="https://source.unsplash.com/686x1016/?movie,poster"></a>
-        </div>
+  
   <!-- Search Results -->
   <div id="results" class="section container" style="display:none">
     <div class="col s12 m7">
-      <!-- Card to be pushed -->
+      <!-- Results card -->
       <div id="result-card" class="card horizontal small">
         <div class="card-image">
           <img class="Poster" src="">
@@ -78,7 +71,8 @@
             <p class="Plot"></p>
           </div>
           <div class="card-action">
-            <button id="add-button" class="right-align waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable"><i
+            <button id="add-button"
+              class="right-align waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable"><i
                 class="deep-purple-text text-darken-2 material-icons left">add</i>add to wishlist</button>
           </div>
         </div>
@@ -86,7 +80,32 @@
     </div>
   </div>
 
-
+  <div id="upcoming">
+    <h4 class="black-text center">Upcoming Movies</h4>
+    <!-- carousel for upcoming movies to show -->
+    <div class="carousel">
+      <a class="carousel-item" href="#one!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#two!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#three!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#four!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#five!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#six!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#seven!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#eight!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#nine!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#ten!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#eleven!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#twelve!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#thirteen!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#fourteen!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#fifteen!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#sixteen!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#seventeen!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#eighteen!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#nineteen!"><img class="carousel-pic" src=""></a>
+      <a class="carousel-item" href="#twenty!"><img class="carousel-pic" src=""></a>
+    </div>
+  </div>
 
   <!-- second page - Wishlist Page -->
 
@@ -108,7 +127,8 @@
             <p class="Plot"></p>
           </div>
           <div class="card-action right-align">
-            <button id="remove-button" class="waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable"><i
+            <button id="remove-button"
+              class="waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable"><i
                 class="deep-purple-text text-darken-2 material-icons left">remove</i>remove from wishlist</button>
           </div>
         </div>
@@ -120,7 +140,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="./assets/data.js"></script>
 <script src="./assets/js/script.js"></script>
 
 </html>
