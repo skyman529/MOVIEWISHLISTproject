@@ -46,7 +46,7 @@ function getmoviedata(event) {
     )
     .catch(err => console.error(err));
 }
-// Renders Movie Search or Wishlist from Main Nav
+// Renders Movie Search or Watchlist from Main Nav
 function searchBarPage(event) {
   event.preventDefault();
   searchMovie.setAttribute("style", "display");
@@ -59,7 +59,7 @@ function searchBarPage(event) {
 function wishListPage(event) {
 
   event.preventDefault();
-  renderWishlist(); //builds wishlist elements on screen
+  renderWishlist(); //builds Watchlist elements on screen
   searchMovie.setAttribute("style", "display:none");
   upcoming.setAttribute("style", "display:none");
   results.setAttribute("style", "display:none");
@@ -89,7 +89,7 @@ $('#search-movie').click(function () {
 });
 
 
-// called on page load to poplate Wishlist global object from localStorage
+// called on page load to poplate Watchlist global object from localStorage
 
 function init() {
   var storedWishlist = JSON.parse(localStorage.getItem('Wishlist'));
@@ -101,13 +101,13 @@ function init() {
 }
 
 
-// Renders Wishlist Items from localStorage and displays in Wishlist Card
+// Renders Watchlist Items from localStorage and displays in Watchlist Card
 function renderWishlist() {
 
-  // Clear wishlist html element
+  // Clear  Watchlist html element
   wishlist.innerHTML = "";
 
-  // Render a new li for each wishlist
+  // Render a new li for each  Watchlist
   for (var i = 0; i < moviesObj.length; i++) {
     var movie = moviesObj[i];
     var li = document.createElement("li");
@@ -135,20 +135,15 @@ function renderWishlist() {
   }
 }
 
-// Saves Movie to Wishlist
+// Saves Movie to  Watchlist
 function storeWishlist() {
   moviesObj.push(movieTitle); // adds movie to local object
   localStorage.setItem("Wishlist", JSON.stringify(moviesObj)); //replaces localStorage wishlist values with our moviesObj
-
-  // displays wishlist after adding a movie
-  renderWishlist();
-  wishlist.setAttribute("style", "display");
-  wishlistContainer.setAttribute("style", "display");
 }
 
 
 
-// Removes Movie from Wishlist
+// Removes Movie from  Watchlist
 wishlist.addEventListener("click", function (event) {
   var element = event.target;
 
