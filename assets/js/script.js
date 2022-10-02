@@ -5,14 +5,19 @@ var searchBarBtn = document.querySelector('.search-bar-button');
 var searchBarBtnTwo = document.querySelector('.search-bar-button-two');
 var wishListBtn = document.querySelector('.wishlist-button');
 var wishListBtnTwo = document.querySelector('.wishlist-button-two');
+//Movie card selectors
 var movieTitleEL = document.querySelector('.Title');
 var movieReleasedEL = document.querySelector('.Released');
 var moviePosterEL = document.querySelector('.Poster');
 var moviePlotEL = document.querySelector('.Plot');
+var movieRatedEL = document.querySelector('.Rated');
+var movieGenreEL = document.querySelector('.Genre');
+// Watchlist selectors
 var results = document.querySelector('#results');
 var wishlist = document.querySelector('#wishlist');
 var searchMovie = document.querySelector('#search-movie-bar');
 var addWishlistBtn = document.querySelector('#add-button');
+// Upcoming movie selectors
 var upcoming = document.querySelector('#upcoming');
 var carousel = document.querySelectorAll('.carousel-pic');
 
@@ -30,18 +35,25 @@ function getmoviedata(event) {
   fetch(`https://www.omdbapi.com/?t=${title}&apikey=a8088794`)
     .then(response => response.json())
     .then(response => {
+      console.log(response);
       // set local vars from returned API object
       var Title = response.Title;
       var Released = response.Released;
       var Poster = response.Poster;
       var Plot = response.Plot;
+      var Rating = response.Rated;
+      var Rating = response.Genre;
 
       // render movie content from vars
       movieTitleEL.textContent = Title;
       movieReleasedEL.textContent = Released;
       moviePosterEL.src = Poster;
       moviePlotEL.textContent = Plot;
-      movieTitle = Title;
+      movieRatedEL.textContent = Rating;
+      movieGenreEL.textContent = Genre;
+      movieTitle = Title; //stores Title in Global var
+      
+     
     }
     )
     .catch(err => console.error(err));
