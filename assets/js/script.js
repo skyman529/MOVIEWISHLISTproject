@@ -1,8 +1,10 @@
+// web selectors for listeners and displaying content
+
 var searchMovieBtn = document.querySelector('#search-movie');
 var searchBarBtn = document.querySelector('.search-bar-button');
 var searchBarBtnTwo = document.querySelector('.search-bar-button-two');
 var wishListBtn = document.querySelector('.wishlist-button');
-var wishListBtnTwo= document.querySelector('.wishlist-button-two');
+var wishListBtnTwo = document.querySelector('.wishlist-button-two');
 var movieTitleEL = document.querySelector('.Title');
 var movieReleasedEL = document.querySelector('.Released');
 var moviePosterEL = document.querySelector('.Poster');
@@ -18,68 +20,62 @@ var carousel = document.querySelectorAll('.carousel-pic');
 var movieTitle;
 var moviesObj = []; // populated from localStorage on page init
 
-
-
-
-
 // Return Movie Data from endpoint
-  function getmoviedata(event) {
-    event.preventDefault();
-    results.setAttribute("style", "display");
-    var searchInputEl = $("#search-movie-input")
-    var title = searchInputEl.val()
-    
-    fetch(`https://www.omdbapi.com/?t=${title}&apikey=a8088794`)
-  .then(response => response.json())
-  .then(response => 
-    {
-        // set local vars from returned API object
-        var Title = response.Title;
-        var Released = response.Released;
-        var Poster = response.Poster;
-        var Plot = response.Plot;
+function getmoviedata(event) {
+  event.preventDefault();
+  results.setAttribute("style", "display");
+  var searchInputEl = $("#search-movie-input")
+  var title = searchInputEl.val()
 
-        // render movie content from vars
-        movieTitleEL.textContent = Title;
-        movieReleasedEL.textContent = Released;
-        moviePosterEL.src = Poster;
-        moviePlotEL.textContent = Plot;
-        movieTitle = Title;
+  fetch(`https://www.omdbapi.com/?t=${title}&apikey=a8088794`)
+    .then(response => response.json())
+    .then(response => {
+      // set local vars from returned API object
+      var Title = response.Title;
+      var Released = response.Released;
+      var Poster = response.Poster;
+      var Plot = response.Plot;
+
+      // render movie content from vars
+      movieTitleEL.textContent = Title;
+      movieReleasedEL.textContent = Released;
+      moviePosterEL.src = Poster;
+      moviePlotEL.textContent = Plot;
+      movieTitle = Title;
     }
-  )
-  .catch(err => console.error(err));
-    
-  }
+    )
+    .catch(err => console.error(err));
+}
 // Renders Movie Search or Wishlist from Main Nav
-  function searchBarPage(event) {
-    event.preventDefault();
-    searchMovie.setAttribute("style", "display");
-    upcoming.setAttribute("style", "display");
-    results.setAttribute("style", "display:none");
-    wishlist.setAttribute("style", "display:none");
-    wishlistContainer.setAttribute("style", "display:none");
-  }
+function searchBarPage(event) {
+  event.preventDefault();
+  searchMovie.setAttribute("style", "display");
+  upcoming.setAttribute("style", "display");
+  results.setAttribute("style", "display:none");
+  wishlist.setAttribute("style", "display:none");
+  wishlistContainer.setAttribute("style", "display:none");
+}
 
-  function wishListPage(event) {
-  
-    event.preventDefault();
-    renderWishlist(); //builds wishlist elements on screen
-    searchMovie.setAttribute("style", "display:none");
-    upcoming.setAttribute("style", "display:none");
-    results.setAttribute("style", "display:none");
-    wishlist.setAttribute("style", "display");
-    wishlistContainer.setAttribute("style", "display");
-    
-  }
+function wishListPage(event) {
+
+  event.preventDefault();
+  renderWishlist(); //builds wishlist elements on screen
+  searchMovie.setAttribute("style", "display:none");
+  upcoming.setAttribute("style", "display:none");
+  results.setAttribute("style", "display:none");
+  wishlist.setAttribute("style", "display");
+  wishlistContainer.setAttribute("style", "display");
+
+}
 
 
 // jQuery for navbar
-$(document).ready(function(){
+$(document).ready(function () {
   $('.sidenav').sidenav();
 });
 
 // jQuery for carousel
-$(document).ready(function(){
+$(document).ready(function () {
   $('.carousel').carousel();
 });
 
@@ -96,30 +92,30 @@ $('#search-movie').click(function () {
 // called on page load to poplate Wishlist global object from localStorage
 
 function init() {
- var storedWishlist = JSON.parse( localStorage.getItem('Wishlist'));
+  var storedWishlist = JSON.parse(localStorage.getItem('Wishlist'));
   // if 
   if (storedWishlist !== null) {
     moviesObj = storedWishlist;
   }
-  
+
 }
 
 
 // Renders Wishlist Items from localStorage and displays in Wishlist Card
 function renderWishlist() {
- 
+
   // Clear wishlist html element
   wishlist.innerHTML = "";
-  
+
   // Render a new li for each wishlist
   for (var i = 0; i < moviesObj.length; i++) {
     var movie = moviesObj[i];
-    var li = document.createElement("li");    
-    
+    var li = document.createElement("li");
+
     li.setAttribute("data-index", i);
     li.setAttribute("class", "collection-item valign-wrapper");
 
-    
+
 
     var button = document.createElement("button");
     button.textContent = "-";
@@ -143,17 +139,17 @@ function renderWishlist() {
 function storeWishlist() {
   moviesObj.push(movieTitle); // adds movie to local object
   localStorage.setItem("Wishlist", JSON.stringify(moviesObj)); //replaces localStorage wishlist values with our moviesObj
-  
-    // displays wishlist after adding a movie
-    renderWishlist();
-    wishlist.setAttribute("style", "display");
-    wishlistContainer.setAttribute("style", "display");
+
+  // displays wishlist after adding a movie
+  renderWishlist();
+  wishlist.setAttribute("style", "display");
+  wishlistContainer.setAttribute("style", "display");
 }
 
 
 
 // Removes Movie from Wishlist
-wishlist.addEventListener("click", function(event) {
+wishlist.addEventListener("click", function (event) {
   var element = event.target;
 
   // Checks if element is a button
@@ -165,7 +161,7 @@ wishlist.addEventListener("click", function(event) {
     // Store updated todos in localStorage, re-render the list
     localStorage.setItem("Wishlist", JSON.stringify(moviesObj));
     renderWishlist();
-    
+
 
   }
 });
@@ -193,4 +189,3 @@ fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=dd204bc02415589bf9e5f
       carousel[i].src = "https://image.tmdb.org/t/p/original/" + data.results[i].poster_path;
     }
   });
-
