@@ -1,22 +1,6 @@
-/* #wish-list { margin: 0; padding: 0; width: 60%; }
- 
-#wish-list li { margin: 0 5px 5px 5px; padding: 5px; font-size: 31.92px; height: 1.5em; }
-
-html>body #wish-list li { height: 3.5em; line-height: 3.2em; } */
- 
-
-
 input {
     min-height: 50px;
 }
-
-.search-icon {
-    padding: 12px 0;
-}
-
-.ui-state-highlight { 
-    height: 162px; 
-    background-color: #512da8; }
 
 li{
     display: flex;
@@ -26,10 +10,13 @@ li{
     margin: 25px;
 }
 
-#wish-list li { 
-    margin: 0 5px 5px 5px; 
-    padding: 5px; 
-    font-size: 31.92px;}
+.search-icon {
+    padding: 12px 0;
+}
+
+.ui-state-highlight { 
+    height: 162px; 
+    background-color: #512da8; }
 
 .wish-image {
     height: 150px;
@@ -42,4 +29,9 @@ li{
     background-repeat: no-repeat;
     background-position: center;
     -webkit-text-stroke: .7px black;
-    }
+}
+
+#wish-list li { 
+    margin: 0 5px 5px 5px; 
+    padding: 5px; 
+    font-size: 31.92px;}
