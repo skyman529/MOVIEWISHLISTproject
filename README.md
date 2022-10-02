@@ -2,7 +2,7 @@
 
 
 ## Description
-App that allows users to Search movies and create a wishlist/future watch list.
+App that allows users to Search movies and create a watchlist.
 
 Thank you for checking out our project!
 
@@ -25,7 +25,15 @@ Thank you for checking out our project!
 
 ## Demo/Screenshots
   
-  <img src=“” height=600 alt=“screenshot of project 
+  ![Screenshot of Page](./Images/Screenshot%20(45).png)
+
+  ![Screenshot of Page](./Images/Screenshot%20(48).png)
+
+  ![Screenshot of Page](./Images/Screenshot%20(49).png)
+  
+  [Deployed site] ()
+
+
 
 ## Technologies
 
