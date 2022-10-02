@@ -35,14 +35,14 @@ function getmoviedata(event) {
   fetch(`https://www.omdbapi.com/?t=${title}&apikey=a8088794`)
     .then(response => response.json())
     .then(response => {
-      console.log(response);
+      
       // set local vars from returned API object
       var Title = response.Title;
       var Released = response.Released;
       var Poster = response.Poster;
       var Plot = response.Plot;
       var Rating = response.Rated;
-      var Rating = response.Genre;
+      var Genre = response.Genre;
 
       // render movie content from vars
       movieTitleEL.textContent = Title;
@@ -52,6 +52,7 @@ function getmoviedata(event) {
       movieRatedEL.textContent = Rating;
       movieGenreEL.textContent = Genre;
       movieTitle = Title; //stores Title in Global var
+      moviePoster = Poster; //stores Title in Global var
       
      
     }
@@ -151,6 +152,7 @@ function renderWishlist() {
 function storeWishlist() {
   moviesObj.push(movieTitle); // adds movie to local object
   localStorage.setItem("Wishlist", JSON.stringify(moviesObj)); //replaces localStorage wishlist values with our moviesObj
+  console.log(moviesObj);
 }
 
 
