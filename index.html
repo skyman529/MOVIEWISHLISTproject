@@ -19,20 +19,20 @@
   <!-- Navbar -->
   <nav>
     <div class="nav-wrapper deep-purple darken-2">
-      <a href="#!" class="brand-logo teal-text text-lighten-5"><i
+      <a href="#!" class="brand-logo blue-text text-lighten-5"><i
           class="black-text material-icons">movie_filter</i>The Watchlist</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="search-bar-button teal-text text-lighten-5" href="">Search Movies</a></li>
-        <li><a class="wishlist-button teal-text text-lighten-5" href="">My Watchlist</a></li>
+        <li><a class="search-bar-button blue-text text-lighten-5" href="">Search Movies</a></li>
+        <li><a class="wishlist-button blue-text text-lighten-5" href="">My Watchlist</a></li>
       </ul>
     </div>
   </nav>
 
 
-  <ul class="right sidenav teal lighten-5" id="mobile-demo">
-    <li><a class="search-bar-button deep-purple-text text-darken-2" href="">Search Movies</a></li>
-    <li><a class="wishlist-button deep-purple-text text-darken-2" href="">My Watchlist</a></li>
+  <ul class="right sidenav blue lighten-5" id="mobile-demo">
+    <li><a class="search-bar-button-two deep-purple-text text-darken-2" href="">Search Movies</a></li>
+    <li><a class="wishlist-button-two deep-purple-text text-darken-2" href="">My Watchlist</a></li>
   </ul>
 
   <!-- Search Bar -->
@@ -41,20 +41,19 @@
     <div class="nav-wrapper">
       <form>
         <div class="input-field">
-          <input id="search-movie-input" class="deep-purple darken-2 teal-text text-lighten-5" type="search" required>
+          <input id="search-movie-input" class="blue lighten-5 deep-purple-text text-darken-2" type="search" required>
           <label class="label-icon" for="search"><i
-              class="search-icon material-icons teal-text text-lighten-5">search</i></label>
+              class="search-icon material-icons blue-text text-lighten-5">search</i></label>
           <button id="search-movie"
-            class="waves-effect waves-light btn-large teal lighten-5 deep-purple-text text-darken-2 hoverable">Search</button>
+            class="waves-effect waves-light btn-large deep-purple darken-2 blue-text text-lighten-5 hoverable">Search</button>
         </div>
       </form>
     </div>
   </div>
-
-  <div class="divider"></div>
   
   <!-- Search Results -->
-  <div id="results" class="section container" style="display:none">
+  <div id="results" class="section" style="display:none">
+  <div class="container">
     <div class="col s12 m7">
       <!-- Results card -->
       <div id="result-card" class="card horizontal small">
@@ -71,17 +70,19 @@
             <p class="Plot"></p>
           </div>
           <div class="card-action">
-            <button id="add-button"
-              class="right-align waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable"><i
+            <button onclick="M.toast({html: 'added to wishlist', classes: 'rounded'})" id="add-button" class="right-align waves-effect waves-light btn blue lighten-5 deep-purple-text text-darken-2 hoverable"><i
                 class="deep-purple-text text-darken-2 material-icons left">add</i>add to wishlist</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div id="upcoming">
-    <h4 class="black-text center">Upcoming Movies</h4>
+  <div class="divider"></div>
+
+  <div id="upcoming" class="section deep-purple darken-2"">
+    <h4 class="black-text center">Upcoming Movies to Watch</h4>
     <!-- carousel for upcoming movies to show -->
     <div class="carousel">
       <a class="carousel-item" href="#one!"><img class="carousel-pic" src=""></a>
@@ -110,27 +111,12 @@
   <!-- second page - Wishlist Page -->
 
   <div class="section container">
-    <div id="wishlist" class="col s12 m7" style="display:none">
-      <h4 class="black-text">My WishList</h4>
-      <!-- This is where the Card will Go -->
-      <div class="card horizontal small">
-        <div class="card-image">
-          <img class="Poster" src="./assets/sample-image/IMG_1574.jpeg">
-        </div>
-        <div class="card-stacked">
-          <div class="card-content">
-            <h4 class="Title header black-text">Movie Title</h4>
-            <ul>
-              <li class="Released deep-purple-text text-darken-2">Movie info</li>
-              <li class="deep-purple-text text-darken-2">Movie info</li>
-            </ul>
-            <p class="Plot"></p>
-          </div>
-          <div class="card-action right-align">
-            <button id="remove-button"
-              class="waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable"><i
-                class="deep-purple-text text-darken-2 material-icons left">remove</i>remove from wishlist</button>
-          </div>
+    <div id="wishlistContainer" class="col s12 m7" style="display:none">
+      <h4 class="black-text">My WatchList</h4>
+        <ul id="wishlist" class="collection" style="display:none">
+          <!-- This is where the wishlist items will be displayed -->
+          
+        </ul>
         </div>
       </div>
     </div>
