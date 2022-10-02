@@ -72,6 +72,7 @@ var moviesObj = []; // populated from localStorage on page init
 $(document).ready(function(){
   $('.sidenav').sidenav();
 });
+// jQuery for carousel
 
 
 // called on page load to poplate Wishlist global object from localStorage
@@ -158,5 +159,17 @@ searchMovieBtn.addEventListener('click', getmoviedata);
 
 // navigation listeners
 searchBarBtn.addEventListener('click', searchBarPage);
-wishListBtn.addEventListener('click', wishListPage)
+wishListBtn.addEventListener('click', wishListPage);
+
+
+$(document).ready(function(){
+  $('.carousel').carousel();
+});
+// scroll to the results
+$('#search-movie').click(function () {
+  var offset = $('#results').offset().top;
+  $('html,body').animate({
+    scrollTop: offset
+  }, 100);
+});
 
