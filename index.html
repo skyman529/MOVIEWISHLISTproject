@@ -14,16 +14,18 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Movie App</title>
 </head>
+
 <body>
   <!-- Navbar -->
   <nav>
     <div class="nav-wrapper deep-purple darken-2">
       <a href="#!" class="brand-logo teal-text text-lighten-5"><i
-          class="black-text material-icons">movie_filter</i>Movie Wishlist</a>
+          class="black-text material-icons">movie_filter</i>Movie Watchlist</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="search-bar-button teal-text text-lighten-5" href="">Search Movies</a></li>
-        <li><a class="wishlist-button teal-text text-lighten-5" href="">My WishList</a></li>
+        <li><a href="wishlistContainer" class="wishlist-button teal-text text-lighten-5">My WatchList</a></li>
+        <li><a class="wishlist-button teal-text text-lighten-5" href="">My WatchList</a></li>
       </ul>
     </div>
   </nav>
@@ -51,15 +53,35 @@
   </div>
 
   <div class="divider"></div>
-  <h4 class="black-text center">Search Upcoming Movies</h4>
+  <h4 class="black-text center">Swipe Thru Upcoming Movies</h4>
         <!-- carousel for upcoming movies to show -->
-        <div class="carousel">
-          <a class="carousel-item" href="#one!"><img src="https://source.unsplash.com/686x1016/?movie,poster"></a>
-          <a class="carousel-item" href="#two!"><img src="https://source.unsplash.com/686x1016/?movie,poster"></a>
-          <a class="carousel-item" href="#three!"><img src="https://source.unsplash.com/686x1016/?movie,poster"></a>
-          <a class="carousel-item" href="#four!"><img src="https://source.unsplash.com/686x1016/?movie,poster"></a>
-          <a class="carousel-item" href="#five!"><img src="https://source.unsplash.com/686x1016/?movie,poster"></a>
-        </div>
+  
+  <div class="carousel carousel-slider center">
+    <div class="carousel-fixed-item">
+      <a onclick="M.toast({html: 'added to wishlist', classes: 'rounded'})" class="btn waves-effect white grey-text darken-text-2">add to wishlist</a>
+    </div>
+    <div id="carousel-item1" class="carousel-item deep-purple darken-2 white-text" href="#one!">
+      <h1>Upcoming Title1</h1>
+      <h2 class="white-text">This is your first panel even when the words bleed into the picture the black outline on the white text in css lets you read it.</h2>
+    </div>
+    <div id="carousel-item2"class="carousel-item deep-purple darken-2 white-text" href="#two!">
+      <h1>Upcoming Title2</h1>
+      <h2 class="white-text">This is your second panel</h2>
+    </div>
+    <div id="carousel-item3" class="carousel-item deep-purple darken-2 white-text" href="#three!">
+      <h1>Upcoming Title3</h1>
+      <h2 class="white-text">This is your third panel</h2>
+    </div>
+    <div id="carousel-item4" class="carousel-item deep-purple darken-2 white-text" href="#four!">
+      <h1>Upcoming Title4</h1>
+      <h2 class="white-text">This is your fourth panel</h2>
+    </div>
+    <div id="carousel-item5" class="carousel-item deep-purple darken-2 white-text" href="#five!">
+      <h1>Upcoming Title5</h1>
+      <h2 class="white-text">This is your fifth panel</h2>
+    </div>
+  </div>
+  <div class="divider"></div>
   <!-- Search Results -->
   <div id="results" class="section container" style="display:none">
     <div class="col s12 m7">
@@ -73,27 +95,23 @@
             <h4 class="Title header black-text"></h4>
             <ul>
               <li class="Released deep-purple-text text-darken-2"></li>
-              <li class="deep-purple-text text-darken-2">Movie info</li>
             </ul>
             <p class="Plot"></p>
           </div>
           <div class="card-action">
-            <button id="add-button" class="right-align waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable"><i
+            <button onclick="M.toast({html: 'added to wishlist', classes: 'rounded'})" id="add-button" class="right-align waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable"><i
                 class="deep-purple-text text-darken-2 material-icons left">add</i>add to wishlist</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
-
-  <!-- second page - Wishlist Page -->
-
+  
+  <!-- second page - Wishlist Page (Faith's UI)
   <div class="section container">
     <div id="wishlist" class="col s12 m7" style="display:none">
       <h4 class="black-text">My WishList</h4>
-      <!-- This is where the Card will Go -->
+     
       <div class="card horizontal small">
         <div class="card-image">
           <img class="Poster" src="./assets/sample-image/IMG_1574.jpeg">
@@ -111,6 +129,21 @@
             <button id="remove-button" class="waves-effect waves-light btn teal lighten-5 deep-purple-text text-darken-2 hoverable"><i
                 class="deep-purple-text text-darken-2 material-icons left">remove</i>remove from wishlist</button>
           </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- second page - Wishlist Page (Jeremy's UI) -->
+
+  <div class="section container">
+    <div id="wishlistContainer" class="col s12 m7" style="display:none">
+      <h4 class="black-text">My WatchList</h4>
+        <ul id="wishlist" class="collection" style="display:none">
+          <!-- This is where the wishlist items will be displayed -->
+          
+        </ul>
         </div>
       </div>
     </div>
