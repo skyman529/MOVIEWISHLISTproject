@@ -35,3 +35,11 @@ li{
     height: 150px;
     width: 100px;
 }
+
+.carousel-item {
+    background-image: url("");
+    image-resolution: 686px x 1016px;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-text-stroke: .7px black;
+    }
