@@ -5,14 +5,19 @@ var searchBarBtn = document.querySelector('.search-bar-button');
 var searchBarBtnTwo = document.querySelector('.search-bar-button-two');
 var wishListBtn = document.querySelector('.wishlist-button');
 var wishListBtnTwo = document.querySelector('.wishlist-button-two');
+//Movie card selectors
 var movieTitleEL = document.querySelector('.Title');
 var movieReleasedEL = document.querySelector('.Released');
 var moviePosterEL = document.querySelector('.Poster');
 var moviePlotEL = document.querySelector('.Plot');
+var movieRatedEL = document.querySelector('.Rated');
+var movieGenreEL = document.querySelector('.Genre');
+// Watchlist selectors
 var results = document.querySelector('#results');
 var wishlist = document.querySelector('#wishlist');
 var searchMovie = document.querySelector('#search-movie-bar');
 var addWishlistBtn = document.querySelector('#add-button');
+// Upcoming movie selectors
 var upcoming = document.querySelector('#upcoming');
 var carousel = document.querySelectorAll('.carousel-pic');
 
@@ -30,23 +35,30 @@ function getmoviedata(event) {
   fetch(`https://www.omdbapi.com/?t=${title}&apikey=a8088794`)
     .then(response => response.json())
     .then(response => {
+      console.log(response);
       // set local vars from returned API object
       var Title = response.Title;
       var Released = response.Released;
       var Poster = response.Poster;
       var Plot = response.Plot;
+      var Rating = response.Rated;
+      var Rating = response.Genre;
 
       // render movie content from vars
       movieTitleEL.textContent = Title;
       movieReleasedEL.textContent = Released;
       moviePosterEL.src = Poster;
       moviePlotEL.textContent = Plot;
-      movieTitle = Title;
+      movieRatedEL.textContent = Rating;
+      movieGenreEL.textContent = Genre;
+      movieTitle = Title; //stores Title in Global var
+      
+     
     }
     )
     .catch(err => console.error(err));
 }
-// Renders Movie Search or Wishlist from Main Nav
+// Renders Movie Search or Watchlist from Main Nav
 function searchBarPage(event) {
   event.preventDefault();
   searchMovie.setAttribute("style", "display");
@@ -59,7 +71,7 @@ function searchBarPage(event) {
 function wishListPage(event) {
 
   event.preventDefault();
-  renderWishlist(); //builds wishlist elements on screen
+  renderWishlist(); //builds Watchlist elements on screen
   searchMovie.setAttribute("style", "display:none");
   upcoming.setAttribute("style", "display:none");
   results.setAttribute("style", "display:none");
@@ -89,7 +101,7 @@ $('#search-movie').click(function () {
 });
 
 
-// called on page load to poplate Wishlist global object from localStorage
+// called on page load to poplate Watchlist global object from localStorage
 
 function init() {
   var storedWishlist = JSON.parse(localStorage.getItem('Wishlist'));
@@ -101,13 +113,13 @@ function init() {
 }
 
 
-// Renders Wishlist Items from localStorage and displays in Wishlist Card
+// Renders Watchlist Items from localStorage and displays in Watchlist Card
 function renderWishlist() {
 
-  // Clear wishlist html element
+  // Clear  Watchlist html element
   wishlist.innerHTML = "";
 
-  // Render a new li for each wishlist
+  // Render a new li for each  Watchlist
   for (var i = 0; i < moviesObj.length; i++) {
     var movie = moviesObj[i];
     var li = document.createElement("li");
@@ -135,20 +147,15 @@ function renderWishlist() {
   }
 }
 
-// Saves Movie to Wishlist
+// Saves Movie to  Watchlist
 function storeWishlist() {
   moviesObj.push(movieTitle); // adds movie to local object
   localStorage.setItem("Wishlist", JSON.stringify(moviesObj)); //replaces localStorage wishlist values with our moviesObj
-
-  // displays wishlist after adding a movie
-  renderWishlist();
-  wishlist.setAttribute("style", "display");
-  wishlistContainer.setAttribute("style", "display");
 }
 
 
 
-// Removes Movie from Wishlist
+// Removes Movie from  Watchlist
 wishlist.addEventListener("click", function (event) {
   var element = event.target;
 
