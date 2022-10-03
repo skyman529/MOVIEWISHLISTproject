@@ -2,11 +2,13 @@
 
 
 ## Description
+
 App that allows users to Search movies and create a watchlist.
 
 Thank you for checking out our project!
 
 ## Table of Contents
+
 * [Description](#Description)
 * [Project URL](#Project-URL)
 * [Deployment](#Deployment)
@@ -18,9 +20,11 @@ Thank you for checking out our project!
 * [Author(s)](#Author(s))
 
 ## Project URL
+
   <https://github.com/skyman529/MOVIEWISHLISTproject>
   
 ## Deployment
+
 * [https://skyman529.github.io/MOVIEWISHLISTproject](https://skyman529.github.io/MOVIEWISHLISTproject)
 
 ## Demo/Screenshots
@@ -34,23 +38,22 @@ Thank you for checking out our project!
   [Deployed site] ()
 
 
-
 ## Technologies
 
   HTML, CSS, JavaScript, Server Side API, Materialize
 
 ## License
-  This project is [mit](https://choosealicense.com/licenses/mit/) licensed.
+  N/A
 
 ## Resources
 
 * [w3schools](https://www.w3schools.com/)
 * [omdbapi](http://www.omdbapi.com/)
-* [Rotten_Tomatoes](https://developer.fandango.com/Rotten_Tomatoes)
+* [The_Movie_DB](https://developers.themoviedb.org)
 
 
 ## Author(s)
-* Sara Sterck GitHub: <https://github.com/sasterck>
 * Faith Vaz: <https://github.com/FaMaVa>
 * Jeremy Fullbright: <https://github.com/jfulbright>
 * Skyler Martin: <https://github.com/skyman529>
+* Sara Sterck GitHub: <https://github.com/sasterck>
