@@ -25,7 +25,7 @@ Thank you for checking out our project!
   
 ## Deployment
 
-* [https://skyman529.github.io/MOVIEWISHLISTproject](https://skyman529.github.io/MOVIEWISHLISTproject)
+* [MOVIEWISHLISTproject](https://skyman529.github.io/MOVIEWISHLISTproject)
 
 ## Demo/Screenshots
   
@@ -35,7 +35,7 @@ Thank you for checking out our project!
 
   ![Screenshot of Page](./Images/Screenshot%20(49).png)
   
-  [Deployed site] ()
+  [Deployed site] (https://skyman529.github.io/MOVIEWISHLISTproject/)
 
 
 ## Technologies
@@ -50,6 +50,8 @@ Thank you for checking out our project!
 * [w3schools](https://www.w3schools.com/)
 * [omdbapi](http://www.omdbapi.com/)
 * [The_Movie_DB](https://developers.themoviedb.org)
+* [Materialize](https://materializecss.com)
+
 
 
 ## Author(s)
